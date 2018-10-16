@@ -28,7 +28,7 @@
                 <li class="tab"><a href="#test2">Combinación</a></li>
                 <li class="tab"><a href="#test3">Grafos</a></li>
                 <li class="tab"><a href="#test4">Tema 4</a></li>
-                <li class="tab"><a href="#test5">Tema 5</a></li>
+                <li class="tab"><a href="#conjuntos">CONJUNTOS</a></li>
             </ul>
         </div>
     </nav>
@@ -176,7 +176,45 @@
         </div>
     </div>
 
-    <div id="test5" class="col s12">
+    <div id="conjuntos" class="row">
+      <br />
+      <div class="col s4 offset-s4">
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Conjuntos</span>
+              <p>Podrás realizar operaciones de conjuntos.</p>
+            </div>
+            <div class="card-action">
+              <div class="input-field">
+                <input id="conjunto1" type="text" class="validate">
+                <label class="active" for="conjunto1">Conjunto 1</label>
+              </div>
+              <div class="input-field">
+                <input id="conjunto2" type="text" class="validate">
+                <label class="active" for="conjunto2">Conjunto 2</label>
+              </div>
+              <div class="input-field">
+                <input id="conjunto3" type="text" class="validate">
+                <label class="active" for="conjunto3">Conjunto 3</label>
+              </div>
+              <div class="input-field">
+                <select>
+                  <option value="" disabled selected>Elige tu operacion</option>
+                  <option value="1">Union</option>
+                  <option value="2">Interseccion</option>
+                  <option value="3">Diferencia</option>
+                </select>
+              </div>
+              <br />
+              <a href="#">OPERAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--div id="test5" class="col s12">
         <div class="row">
             <div class="col s6 offset-s4">
                 <div class="row">
@@ -187,21 +225,19 @@
                             </div>
                             <div class="card-content">
                                 <div class="row">
-                                    <form id="formCircular">
-                                        <div class="row">
-                                            <div class="input-field col s2">
-                                                <h5>f(x)=</h5>
-                                            </div>
-                                            <div class="input-field col s8">
-                                                <input id="inputCircular" type="text" />
-                                            </div>
-                                            <div class="input-field col s2">
-                                                <button class="btn waves-effect waves-light" type="submit">
-                                                    >
-                                                </button>
-                                            </div>
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <h5>f(x)=</h5>
                                         </div>
-                                    </form>
+                                        <div class="input-field col s8">
+                                            <input id="inputCircular" type="text" />
+                                        </div>
+                                        <div class="input-field col s2">
+                                            <button class="btn waves-effect waves-light">
+                                                <i class="material-icons">keyboard_arrow_right</i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +245,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div -->
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
