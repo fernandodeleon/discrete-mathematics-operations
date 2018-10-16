@@ -1,12 +1,8 @@
 $( document ).ready( function () {
   $( '#mySelect' ).change( function () {
-
     if (document.getElementById("inner").hasChildNodes()) {
       $( "#inner" ).empty();
     }
-
-
-
     let html = null;
     let value = $( this ).val();
     for ( var x = 0; x < value; x++ ) {
