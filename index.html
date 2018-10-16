@@ -189,7 +189,7 @@
               <br />
               <div class="input-field">
                 <select id="mySelect">
-                  <option value="" disabled selected>Numero de conjuntos a operar</option>
+                  <option value="0" selected>Numero de conjuntos a operar</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
@@ -197,18 +197,22 @@
             </div>
             <div class="card-action">
               <div id="inner">
-                
+
               </div>
               <div class="input-field">
-                <select>
+                <select id="operationSelect">
                   <option value="" disabled selected>Elige tu operacion</option>
-                  <option value="1">Union</option>
-                  <option value="2">Interseccion</option>
-                  <option value="3">Diferencia</option>
+                  <option value="union">Union</option>
+                  <option value="interseccion">Interseccion</option>
+                  <option value="diferencia">Diferencia</option>
                 </select>
               </div>
               <br />
-              <a href="#">OPERAR</a>
+              <div id="result">
+
+              </div>
+              <br />
+              <a id="letsoperate" href="#">OPERAR</a>
             </div>
           </div>
         </div>
