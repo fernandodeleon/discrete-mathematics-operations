@@ -28,8 +28,8 @@ $( document ).ready( function () {
             Materialize.toast('Conjuntos vacios', 3000);
           } else {
             if ( operation === "union" ) {
-              let arrayConjunto1 = $( "#conjunto1" ).val().split(" ");
-              let arrayConjunto2 = $( "#conjunto2" ).val().split(" ");
+              let arrayConjunto1 = $( "#conjunto1" ).val().trim().split(" ");
+              let arrayConjunto2 = $( "#conjunto2" ).val().trim().split(" ");
               let auxiliary = [];
               for ( let x = 0; x < arrayConjunto1.length; x++ ) {
                 for ( let y = 0; y < arrayConjunto2.length; y++ ) {
@@ -46,7 +46,7 @@ $( document ).ready( function () {
                       return j === arrayConjunto2[y];
                     } );
                     if ( indexConj1 === -1 ) auxiliary.push( arrayConjunto1[x] );
-                    else if ( indexConj2 === -1 ) auxiliary.push( arrayConjunto2[y] );
+                    if ( indexConj2 === -1 ) auxiliary.push( arrayConjunto2[y] );
                   }
                 }
               }
