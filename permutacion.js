@@ -10,7 +10,7 @@ $(document).ready(function () {
         }
 
         //(n-r) factorial
-        if (r < n) {
+        if (r <= n) {
             let eneMenosErre = n - r;
             var resultadoEneMenorR = 1;
             for (i = 1; i <= eneMenosErre; i++) {
@@ -18,7 +18,7 @@ $(document).ready(function () {
             }
             $("#resultadoPermutacion").text("Resultado: " + (resultadoN/resultadoEneMenorR));
         }else{
-            Materialize.toast('"r" no puede ser igual o mayor a "n"', 4000)
+            Materialize.toast('"r" no puede ser mayor a "n"', 4000)
         }
 
         event.preventDefault();
