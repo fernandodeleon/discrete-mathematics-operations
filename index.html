@@ -187,19 +187,18 @@
             <div class="card-content">
               <span class="card-title">Conjuntos</span>
               <p>Podrás realizar operaciones de conjuntos.</p>
+              <br />
+              <div class="input-field">
+                <select id="mySelect">
+                  <option value="" disabled selected>Numero de conjuntos a operar</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
             </div>
             <div class="card-action">
-              <div class="input-field">
-                <input id="conjunto1" type="text" class="validate">
-                <label class="active" for="conjunto1">Conjunto 1</label>
-              </div>
-              <div class="input-field">
-                <input id="conjunto2" type="text" class="validate">
-                <label class="active" for="conjunto2">Conjunto 2</label>
-              </div>
-              <div class="input-field">
-                <input id="conjunto3" type="text" class="validate">
-                <label class="active" for="conjunto3">Conjunto 3</label>
+              <div id="inner">
+                
               </div>
               <div class="input-field">
                 <select>
@@ -216,39 +215,6 @@
         </div>
       </div>
     </div>
-
-    <!--div id="test5" class="col s12">
-        <div class="row">
-            <div class="col s6 offset-s4">
-                <div class="row">
-                    <div class="col s12 m8">
-                        <div class="card">
-                            <div class="card-image">
-                                <span id="circular" class="graph"></span>
-                            </div>
-                            <div class="card-content">
-                                <div class="row">
-                                    <div class="row">
-                                        <div class="input-field col s2">
-                                            <h5>f(x)=</h5>
-                                        </div>
-                                        <div class="input-field col s8">
-                                            <input id="inputCircular" type="text" />
-                                        </div>
-                                        <div class="input-field col s2">
-                                            <button class="btn waves-effect waves-light">
-                                                <i class="material-icons">keyboard_arrow_right</i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div -->
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
@@ -265,9 +231,7 @@
 <script src="./combinacion.js"></script>
 <script src="./tema3.js"></script>
 <script src="./tema4.js"></script>
-<script src="./tema5.js"></script>
-
-
+<script src="./conjuntos.js"></script>
 
 <script src="./grafos.js"></script>
 
