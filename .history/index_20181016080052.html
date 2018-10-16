@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="./grafos.css" rel="stylesheet" />
 
-    <script src="./cytoscape.min.js"></script>
-    <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
-    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.5.0/cytoscape-dagre.js"></script>
 
 </head>
 
@@ -40,7 +37,7 @@
                     <div class="col s12 m8">
                         <div class="card">
                             <div class="card-image">
-
+                                
                             </div>
                             <div class="card-content">
                                 <div class="row">
@@ -77,7 +74,7 @@
                     <div class="col s12 m8">
                         <div class="card">
                             <div class="card-image">
-
+                                
                             </div>
                             <div class="card-content">
                                 <div class="row">
@@ -113,26 +110,27 @@
                 <div class="row">
                     <div class="col s12 m8">
                         <div class="card">
-                            <div class="card-image" style="height: 500px;">
-                                <!-- <span id="cubica" class="graph"></span> -->
-                                <div id="cy"></div>
+                            <div class="card-image">
+                                <span id="cubica" class="graph"></span>
                             </div>
                             <div class="card-content">
+                                <div id="cy"></div>
                                 <div class="row">
-                                    <form id="formGrafos">
+                                    <form id="formCubica">
                                         <div class="row">
-
+                                            
                                             <div class="input-field col s8">
                                                 <input id="inputCubica" type="text" />
                                             </div>
                                             <div class="input-field col s4">
-                                                <button class="btn waves-effect waves-light indigo darken-1" type="submit">
+                                                <button class="btn waves-effect waves-light" type="submit">
                                                     Agregar
                                                 </button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -228,8 +226,9 @@
 <script src="./tema4.js"></script>
 <script src="./tema5.js"></script>
 
-
-
+<script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
+<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.5.0/cytoscape-dagre.js"></script>
+<script src="./grafos.js"></script>
 <script src="./grafos.js"></script>
 
 </html>
