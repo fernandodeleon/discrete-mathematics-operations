@@ -50,8 +50,7 @@ $( document ).ready( function () {
                   }
                 }
               }
-
-              html = `<p>${auxiliary.sort((a, b) => a - b)}</p>`;
+              html = `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
               $( "#result" ).append( html );
             } else {
               Materialize.toast('Ninguna operacion seleccionada', 3000);
