@@ -1,5 +1,5 @@
 
-var cy = window.cy = cytoscape({
+/*var cy = window.cy = cytoscape({
 
 
     container: document.getElementById('cy'),
@@ -59,23 +59,80 @@ var cy = window.cy = cytoscape({
 
         ]
     },
-});
+});*/
 
 $(document).ready(function () {
-    let arrayDePuntosDelGrafo = [];
+
+    let nodesAux = [];
+    let edgesAux = [];
 
 
     $("#formGrafos").submit(function (event) {
         let desde = $("#inputDesde").val();
         let hacia = $("#inputHacia").val();
 
-        arrayDePuntosDelGrafo.push({source: desde, target: hacia});
-        arrayDePuntosDelGrafo.map((a) => {
-            console.log(a.source);
+        //arrayDePuntosDelGrafo.push({ source: desde, target: hacia });
+
+        
+
+        nodesAux.push({ data: { id: desde } });
+        edgesAux.push({ data: { source: desde, target: hacia } });
+        //console.log(JSON.stringify(arrayDePuntosDelGrafo, 2, 2))
+
+        edgesAux.forEach(function (i) {
+            // if (i.id == hacia) {
+            //     alert("existe uno")
+            // } else {
+            //     alert("nada por aqui")
+            // }
+            alert(i.source)
+        });
+
+        window.cy = cytoscape({
+
+
+            container: document.getElementById('cy'),
+
+            boxSelectionEnabled: false,
+            autounselectify: true,
+
+            layout: {
+                name: 'dagre'
+            },
+
+            style: [
+                {
+                    selector: 'node',
+                    style: {
+                        'content': 'data(id)',
+                        'text-opacity': 0.5,
+                        'text-valign': 'center',
+                        'text-halign': 'right',
+                        'background-color': '#11479e'
+                    }
+                },
+
+                {
+                    selector: 'edge',
+                    style: {
+                        'curve-style': 'bezier',
+                        'width': 4,
+                        'target-arrow-shape': 'triangle',
+                        'line-color': '#9dbaea',
+                        'target-arrow-color': '#9dbaea'
+                    }
+                }
+            ],
+
+            elements: {
+                nodes: [...nodesAux],
+                edges: [...edgesAux]
+            },
         });
 
         $("#inputDesde").val("");
         $("#inputHacia").val("");
+
 
         // //n factorial
         // var resultadoN = 1;
