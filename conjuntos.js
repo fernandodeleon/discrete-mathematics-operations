@@ -44,7 +44,20 @@ $( document ).ready( function () {
     }
 
     let getInterseccion = function () {
-
+      let arrayConjunto1 = $( "#conjunto1" ).val().trim().split(" ");
+      let arrayConjunto2 = $( "#conjunto2" ).val().trim().split(" ");
+      let auxiliary = [];
+      for ( let x = 0; x < arrayConjunto1.length; x++ ) {
+        for ( let y = 0; y < arrayConjunto2.length; y++ ) {
+          if ( arrayConjunto1[x] === arrayConjunto2[y] ) {
+            let index = auxiliary.findIndex( j => {
+              return j === arrayConjunto1[x];
+            });
+            if ( index === -1 ) auxiliary.push( arrayConjunto1[x] );
+          }
+        }
+      }
+      return `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
     }
 
     let getDiferencia = function () {
@@ -65,10 +78,11 @@ $( document ).ready( function () {
             let union = getUnion();
             $( "#result" ).append( union );
           } else if (operation === "interseccion") {
-            console.log("interseccion");
+            let interseccion = getInterseccion();
+            $( "#result" ).append( interseccion );
           } else if (operation === "diferencia") {
             console.log("diferencia");
-          }
+          } else showToast('Operacion no seleccionada');
         } else showToast('Conjuntos vacios');
       } else showToast( 'No existen las entradas de texto');
     } else if ( numeroDeConjuntos === "3" ) {
