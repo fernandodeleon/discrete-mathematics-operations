@@ -16,52 +16,63 @@ $( document ).ready( function () {
   });
 
   $( "#letsoperate" ).click( function () {
-    let html = null;
-    let operation = $( "#operationSelect" ).val();
-    let numeroDeConjuntos = $( "#mySelect" ).val();
-    if (numeroDeConjuntos === "0") {
-      Materialize.toast('Cantidad de conjuntos no seleccionada', 3000);
-    } else {
-      if (numeroDeConjuntos === "2") {
-        if (  document.getElementById("conjunto1") && document.getElementById("conjunto2") ) {
-          if ( $( "#conjunto1" ).val() === "" || $( "#conjunto2" ).val() === "" ) {
-            Materialize.toast('Conjuntos vacios', 3000);
-          } else {
-            if ( operation === "union" ) {
-              let arrayConjunto1 = $( "#conjunto1" ).val().trim().split(" ");
-              let arrayConjunto2 = $( "#conjunto2" ).val().trim().split(" ");
-              let auxiliary = [];
-              for ( let x = 0; x < arrayConjunto1.length; x++ ) {
-                for ( let y = 0; y < arrayConjunto2.length; y++ ) {
-                  if ( arrayConjunto1[x] === arrayConjunto2[y] ) {
-                    let index = auxiliary.findIndex( j => {
-                      return j === arrayConjunto1[x];
-                    });
-                    if ( index === -1 ) auxiliary.push( arrayConjunto1[x] );
-                  } else {
-                    let indexConj1 = auxiliary.findIndex( j => {
-                      return j === arrayConjunto1[x];
-                    } );
-                    let indexConj2 = auxiliary.findIndex( j => {
-                      return j === arrayConjunto2[y];
-                    } );
-                    if ( indexConj1 === -1 ) auxiliary.push( arrayConjunto1[x] );
-                    if ( indexConj2 === -1 ) auxiliary.push( arrayConjunto2[y] );
-                  }
-                }
-              }
-              html = `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
-              $( "#result" ).append( html );
+
+    let getUnion = function () {
+        let arrayConjunto1 = $( "#conjunto1" ).val().trim().split(" ");
+        let arrayConjunto2 = $( "#conjunto2" ).val().trim().split(" ");
+        let auxiliary = [];
+        for ( let x = 0; x < arrayConjunto1.length; x++ ) {
+          for ( let y = 0; y < arrayConjunto2.length; y++ ) {
+            if ( arrayConjunto1[x] === arrayConjunto2[y] ) {
+              let index = auxiliary.findIndex( j => {
+                return j === arrayConjunto1[x];
+              });
+              if ( index === -1 ) auxiliary.push( arrayConjunto1[x] );
             } else {
-              Materialize.toast('Ninguna operacion seleccionada', 3000);
+              let indexConj1 = auxiliary.findIndex( j => {
+                return j === arrayConjunto1[x];
+              } );
+              let indexConj2 = auxiliary.findIndex( j => {
+                return j === arrayConjunto2[y];
+              } );
+              if ( indexConj1 === -1 ) auxiliary.push( arrayConjunto1[x] );
+              if ( indexConj2 === -1 ) auxiliary.push( arrayConjunto2[y] );
             }
           }
-        } else {
-          console.log("no existen aun");
         }
-      } else {
-        console.log("otras opcines");
-      }
+        return `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
     }
+
+    let getInterseccion = function () {
+
+    }
+
+    let getDiferencia = function () {
+
+    }
+
+    let showToast = function (message) {
+      Materialize.toast( message , 3000 );
+    }
+
+    let operation = $( "#operationSelect" ).val();
+    let numeroDeConjuntos = $( "#mySelect" ).val();
+
+    if ( numeroDeConjuntos === "2" ) {
+      if (  document.getElementById("conjunto1") && document.getElementById("conjunto2") ) {
+        if ( $( "#conjunto1" ).val() !== "" || $( "#conjunto2" ).val() !== "" ) {
+          if (operation === "union") {
+            let union = getUnion();
+            $( "#result" ).append( union );
+          } else if (operation === "interseccion") {
+            console.log("interseccion");
+          } else if (operation === "diferencia") {
+            console.log("diferencia");
+          }
+        } else showToast('Conjuntos vacios');
+      } else showToast( 'No existen las entradas de texto');
+    } else if ( numeroDeConjuntos === "3" ) {
+      console.log("Tres conjuntos");
+    }  else showToast( 'Cantidad de conjuntos no seleccionada' );
   });
 });
