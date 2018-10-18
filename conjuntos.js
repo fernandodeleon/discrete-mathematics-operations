@@ -40,7 +40,7 @@ $( document ).ready( function () {
             }
           }
         }
-        return `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
+        return `<p> C1 ∪ C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
     }
 
     let getInterseccion = function () {
@@ -57,7 +57,7 @@ $( document ).ready( function () {
           }
         }
       }
-      return `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
+      return `<p> C1 ∩ C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
     }
 
     let getDiferencia = function () {
@@ -72,11 +72,15 @@ $( document ).ready( function () {
             });
             if ( index === -1 ) auxiliary.push( arrayConjunto1[x] );
           } else {
+            let index = auxiliary.findIndex( j => {
+              return j === arrayConjunto1[x];
+            });
+            if ( index !== -1 ) auxiliary.splice( index, 1 );
             break;
           }
         }
       }
-      return `<p> C1 U C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
+      return `<p> C1 ⊖ C2 = { ${auxiliary.sort((a, b) => a - b)} }</p>`;
     }
 
     let showToast = function (message) {
