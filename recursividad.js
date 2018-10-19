@@ -19,12 +19,12 @@ $(document).ready( function () {
               height: auto;
               margin-top: 15px;"
           >
-            ${ numbers }
+            ${ numbers.join( " ") }
           </div>`;
           $( "#fiboResult" ).append( fiboDone ).hide().show('slow');
         }
       }
     }
-    fibonacci(0, 0, true, $( "#limitInput" ).val().trim() );
+    fibonacci( 0, 0, true, $( "#limitInput" ).val().trim() );
    } );
 } );

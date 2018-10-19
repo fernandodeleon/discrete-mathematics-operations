@@ -21,7 +21,7 @@
 <body>
   <nav class="nav-extended orange darken-4">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo" style="margin-left: 15px;">Math</a>
+      <a href="#" class="brand-logo" style="margin-left: 15px;">Matemática Discreta</a>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="tab">
-          <a href="#test3">
+          <a href="#grafos">
             GRAFOS
           </a>
         </li>
@@ -72,7 +72,7 @@
                 <label>R</label>
               </div>
               <br />
-              <button class="btn waves-effect waves-light indigo darken-1" type="submit">
+              <button class="btn waves-effect waves-light" type="submit">
                 Calcular
               </button>
             </form>
@@ -103,7 +103,7 @@
                   <label>R</label>
                 </div>
                 <br />
-                <button class="btn waves-effect waves-light indigo darken-1" type="submit">
+                <button class="btn waves-effect waves-light" type="submit">
                   Calcular
                 </button>
               </form>
@@ -115,43 +115,38 @@
     </div>
   </div>
 
-    <div id="test3" class="col s12">
-        <div class="row">
-            <div class="col s6 offset-s4">
-                <div class="row">
-                    <div class="col s12 m8">
-                        <div class="card">
-                            <div class="card-image" style="height: 500px;">
-                                <div id="cy"></div>
-                            </div>
-                            <div class="card-content">
-                                <div class="row">
-                                    <form id="formGrafos">
-                                        <div class="row">
-
-                                            <div class="input-field col s4">
-                                                <input id="inputDesde" type="text" placeholder="Desde"/>
-                                            </div>
-                                            <div class="input-field col s4">
-                                                <input id="inputHacia" type="text" placeholder="Hacia"/>
-                                            </div>
-                                            <div class="input-field col s4">
-                                                <button class="btn waves-effect waves-light indigo darken-1" type="submit">
-                                                    Agregar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div id="grafos">
+      <br />
+      <div class="row align">
+        <div class="col s3 offset-s4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Grafos</span>
+              <p>Podrás crear grafos dirigidos.</p>
+              <form id="formGrafos">
+                <div class="input-field">
+                  <input id="inputDesde" type="text"/>
+                  <label>Desde</label>
                 </div>
+                <div class="input-field">
+                  <input id="inputHacia" type="text"/>
+                  <label>Hasta</label>
+                </div>
+                <br />
+                <button class="btn waves-effect waves-light" type="submit">
+                  Agregar
+                </button>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="row">
+        <div id="cy"></div>
+      </div>
     </div>
 
-    <div id="recursividad">
+    <div id="recursividad" class="col s12">
       <div class="row align">
         <div class="col s4 offset-s4">
           <br />
@@ -170,7 +165,7 @@
 
     <div id="conjuntos" class="row">
       <br />
-      <div class="col s4 offset-s4">
+      <div class="col s3 offset-s4">
         <div class="row align">
           <div class="card">
             <div class="card-content">
@@ -198,7 +193,10 @@
               </div>
               <div id="result"></div>
               <br />
-              <a id="letsoperate" href="#">OPERAR</a>
+
+              <button id="letsoperate" class="btn waves-effect waves-light">
+                OPERAR
+              </button>
             </div>
           </div>
         </div>

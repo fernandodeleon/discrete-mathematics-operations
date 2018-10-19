@@ -13,13 +13,9 @@ $(document).ready(function () {
         edgesAux.push({ data: { source: desde, target: hacia } });
 
         window.cy = cytoscape({
-
-
             container: document.getElementById('cy'),
-
             boxSelectionEnabled: false,
             autounselectify: true,
-
             layout: {
                 name: 'dagre'
             },
