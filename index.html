@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="./grafos.css" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
 
     <script src="./cytoscape.min.js"></script>
     <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
@@ -18,94 +19,101 @@
 </head>
 
 <body>
-    <nav class="nav-extended orange darken-4">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo" style="margin-left: 15px;">Math</a>
-        </div>
-        <div class="nav-content">
-            <ul class="tabs tabs-transparent">
-                <li class="tab"><a class="active" href="#test1">Permutación</a></li>
-                <li class="tab"><a href="#test2">Combinación</a></li>
-                <li class="tab"><a href="#test3">Grafo dirigido</a></li>
-                <li class="tab"><a href="#recursividad">RECURSIVIDAD</a></li>
-                <li class="tab"><a href="#conjuntos">CONJUNTOS</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div id="test1" class="col s12">
-        <div class="row">
-            <div class="col s6 offset-s4">
-                <div class="row">
-                    <div class="col s12 m8">
-                        <div class="card">
-                            <div class="card-image">
-
-                            </div>
-                            <div class="card-content">
-                                <div class="row">
-                                    <form id="formPermutacion">
-                                        <div class="row">
-                                            <div class="input-field col s4">
-                                                <input id="inputNPermutacion" placeholder="Ingrese n" type="text" />
-                                            </div>
-                                            <div class="input-field col s4">
-                                                <input id="inputRPermutacion" placeholder="Ingrese r" type="text" />
-                                            </div>
-                                            <div class="input-field col s4">
-                                                <button class="btn waves-effect waves-light indigo darken-1" type="submit">
-                                                    Calcular
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                    <h5 id="resultadoPermutacion"></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <nav class="nav-extended orange darken-4">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" style="margin-left: 15px;">Math</a>
     </div>
-
-    <div id="test2" class="col s12">
-        <div class="row">
-            <div class="col s6 offset-s4">
-                <div class="row">
-                    <div class="col s12 m8">
-                        <div class="card">
-                            <div class="card-image">
-
-                            </div>
-                            <div class="card-content">
-                                <div class="row">
-                                    <form id="formCombinacion">
-                                        <div class="row">
-                                            <div class="input-field col s4">
-                                                <input id="inputNCombinacion" placeholder="Ingrese n" type="text" />
-                                            </div>
-                                            <div class="input-field col s4">
-                                                <input id="inputRCombinacion" placeholder="Ingrese r" type="text" />
-                                            </div>
-                                            <div class="input-field col s4">
-                                                <button class="btn waves-effect waves-light indigo darken-1" type="submit">
-                                                    Calcular
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                    <h5 id="resultadoCombinacion"></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab">
+          <a class="active" href="#permutacion">
+            PERMUTACIÓN
+          </a>
+        </li>
+        <li class="tab">
+          <a href="#combinacion">
+            COMBINACIÓN
+          </a>
+        </li>
+        <li class="tab">
+          <a href="#test3">
+            GRAFOS
+          </a>
+        </li>
+        <li class="tab">
+          <a href="#recursividad">
+            RECURSIVIDAD
+          </a>
+        </li>
+        <li class="tab">
+          <a href="#conjuntos">
+            CONJUNTOS
+          </a>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+  <div id="permutacion" class="col s12">
+    <br />
+    <div class="row align">
+      <div class="col s3 offset-s4">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Permutación</span>
+            <p>Podrás realizar permutaciones.</p>
+            <form id="formPermutacion">
+              <div class="input-field">
+                <input id="inputNPermutacion" type="text" />
+                <label>N</label>
+              </div>
+              <div class="input-field">
+                <input id="inputRPermutacion" type="text" />
+                <label>R</label>
+              </div>
+              <br />
+              <button class="btn waves-effect waves-light indigo darken-1" type="submit">
+                Calcular
+              </button>
+            </form>
+            <br />
+            <h5 id="resultadoPermutacion"></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="combinacion" class="col s12">
+    <br />
+    <div class="row align">
+      <div class="col s3 offset-s4">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Combinación</span>
+            <p>Podrás realizar combinaciónes.</p>
+            <div class="row">
+              <form id="formCombinacion">
+                <div class="input-field">
+                  <input id="inputNCombinacion" type="text" />
+                  <label>N</label>
+                </div>
+                <div class="input-field">
+                  <input id="inputRCombinacion" type="text" />
+                  <label>R</label>
+                </div>
+                <br />
+                <button class="btn waves-effect waves-light indigo darken-1" type="submit">
+                  Calcular
+                </button>
+              </form>
+              <h5 id="resultadoCombinacion"></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div id="test3" class="col s12">
         <div class="row">
@@ -143,22 +151,27 @@
         </div>
     </div>
 
-    <div id="recursividad" class="col s12">
-        <div class="row">
-            <div class="col s4 offset-s4">
-              <br />
-              <button id="fiboButton" class="btn waves-effect waves-light">
-                  Fibonacci
-              </button>
-              <div id="fiboResult"></div>
-            </div>
+    <div id="recursividad">
+      <div class="row align">
+        <div class="col s4 offset-s4">
+          <br />
+          <div class="input-field">
+            <input id="limitInput" type="text" class="validate">
+            <label for="first_name">Limite</label>
+          </div>
+          <button id="fiboButton" class="btn waves-effect waves-light">
+              ¡VAMOS!
+          </button>
+          <br /><br />
+          <div id="fiboResult"></div>
         </div>
+      </div>
     </div>
 
     <div id="conjuntos" class="row">
       <br />
       <div class="col s4 offset-s4">
-        <div class="row">
+        <div class="row align">
           <div class="card">
             <div class="card-content">
               <span class="card-title">Conjuntos</span>
@@ -168,15 +181,12 @@
                 <select id="mySelect">
                   <option value="" disabled selected>Numero de conjuntos</option>
                   <option value="2">2</option>
-                  <!-- option value="3">3</option -->
                 </select>
                 <label>Conjuntos</label>
               </div>
             </div>
             <div class="card-action">
-              <div id="inner">
-
-              </div>
+              <div id="inner"></div>
               <div class="input-field">
                 <select id="operationSelect">
                   <option value="" disabled selected>Elige tu operacion</option>
@@ -186,10 +196,7 @@
                 </select>
                 <label>Operacion</label>
               </div>
-              <br />
-              <div id="result">
-
-              </div>
+              <div id="result"></div>
               <br />
               <a id="letsoperate" href="#">OPERAR</a>
             </div>
@@ -198,6 +205,7 @@
       </div>
     </div>
 </body>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 

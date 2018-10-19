@@ -14,11 +14,17 @@ $(document).ready( function () {
           numbers.push(result);
           return fibonacci(numbers[numbers.length - 1], numbers[numbers.length - 2], false, limit);
         } else {
-          let fiboDone = `<p> ${ numbers } </p>`;
-          $( "#fiboResult" ).append( fiboDone );
+          let fiboDone = `<div
+            style="border: 1px solid orange;
+              height: auto;
+              margin-top: 15px;"
+          >
+            ${ numbers }
+          </div>`;
+          $( "#fiboResult" ).append( fiboDone ).hide().show('slow');
         }
       }
     }
-    fibonacci(0, 0, true, 100);
+    fibonacci(0, 0, true, $( "#limitInput" ).val().trim() );
    } );
 } );
