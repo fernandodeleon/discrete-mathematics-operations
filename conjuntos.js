@@ -95,13 +95,13 @@ $( document ).ready( function () {
         if ( $( "#conjunto1" ).val() !== "" || $( "#conjunto2" ).val() !== "" ) {
           if (operation === "union") {
             let union = getUnion();
-            $( "#result" ).append( union );
+            $( "#result" ).append( union ).hide().show('slow');
           } else if (operation === "interseccion") {
             let interseccion = getInterseccion();
-            $( "#result" ).append( interseccion );
+            $( "#result" ).append( interseccion ).hide().show('slow');
           } else if (operation === "diferencia") {
             let diferencia = getDiferencia();
-            $( "#result" ).append( diferencia );
+            $( "#result" ).append( diferencia ).hide().show('slow');
           } else showToast('Operacion no seleccionada');
         } else showToast('Conjuntos vacios');
       } else showToast( 'No existen las entradas de texto');

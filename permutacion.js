@@ -16,7 +16,7 @@ $(document).ready(function () {
             for (i = 1; i <= eneMenosErre; i++) {
                 resultadoEneMenorR = resultadoEneMenorR * i;
             }
-            $("#resultadoPermutacion").text("Resultado: " + (resultadoN/resultadoEneMenorR));
+            $("#resultadoPermutacion").text(resultadoN/resultadoEneMenorR).hide().show('slow');
         }else{
             Materialize.toast('"r" no puede ser mayor a "n"', 4000)
         }
@@ -24,4 +24,3 @@ $(document).ready(function () {
         event.preventDefault();
     });
 });
-
