@@ -1,5 +1,5 @@
-$( document ).ready( function () {
-  $( "#onclickPermu" ).click( function () {
+$(document).ready(function () {
+  $("#formPermutacion").submit(function (event) {
     let n = parseInt($("#inputNPermutacion").val().trim());
     let r = parseInt($("#inputRPermutacion").val().trim());
     if (r > n) {
@@ -7,17 +7,19 @@ $( document ).ready( function () {
     } else {
       let newN = 1;
       for (let i = 1; i <= n; i++) {
-          newN = newN * i;
+        newN = newN * i;
       }
       let resta = n - r;
       var resultadoEneMenorR = 1;
       for (let i = 1; i <= resta; i++) {
-          resultadoEneMenorR = resultadoEneMenorR * i;
+        resultadoEneMenorR = resultadoEneMenorR * i;
       }
       $("#resultadoPermutacion")
-        .text(newN/resultadoEneMenorR)
+        .text(newN / resultadoEneMenorR)
         .hide()
         .show('slow');
     }
-  } );
-} );
+
+    event.preventDefault();
+  });
+});
