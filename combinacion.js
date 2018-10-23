@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#formCombinacion").submit(function (event) {
-        let n = $("#inputNCombinacion").val();
-        let r = $("#inputRCombinacion").val();
+        let n = parseInt($("#inputNCombinacion").val());
+        let r = parseInt($("#inputRCombinacion").val());
 
         //n factorial
         var resultadoN = 1;
@@ -22,7 +22,7 @@ $(document).ready(function () {
             for (i = 1; i <= eneMenosErre; i++) {
                 resultadoEneMenorR = resultadoEneMenorR * i;
             }
-            $("#resultadoCombinacion").text("Resultado: " + (resultadoN/(resultadoR*resultadoEneMenorR)));
+            $("#resultadoCombinacion").text(resultadoN/(resultadoR*resultadoEneMenorR)).hide().show('slow');
         }else{
             Materialize.toast('"r" no puede ser mayor a "n"', 4000)
         }
@@ -30,5 +30,3 @@ $(document).ready(function () {
         event.preventDefault();
     });
 });
-
-
