@@ -1,26 +1,23 @@
-$(document).ready(function () {
-    $("#formPermutacion").submit(function (event) {
-        let n = $("#inputNPermutacion").val();
-        let r = $("#inputRPermutacion").val();
-
-        //n factorial
-        var resultadoN = 1;
-        for (i = 1; i <= n; i++) {
-            resultadoN = resultadoN * i;
-        }
-
-        //(n-r) factorial
-        if (r <= n) {
-            let eneMenosErre = n - r;
-            var resultadoEneMenorR = 1;
-            for (i = 1; i <= eneMenosErre; i++) {
-                resultadoEneMenorR = resultadoEneMenorR * i;
-            }
-            $("#resultadoPermutacion").text(resultadoN/resultadoEneMenorR).hide().show('slow');
-        }else{
-            Materialize.toast('"r" no puede ser mayor a "n"', 4000)
-        }
-
-        event.preventDefault();
-    });
-});
+$( document ).ready( function () {
+  $( "#onclickPermu" ).click( function () {
+    let n = $("#inputNPermutacion").val().trim();
+    let r = $("#inputRPermutacion").val().trim();
+    if (r > n) {
+      Materialize.toast('"R" no puede ser mayor a "N"', 3000);
+    } else {
+      let newN = 1;
+      for (let i = 1; i <= n; i++) {
+          newN = newN * i;
+      }
+      let resta = n - r;
+      var resultadoEneMenorR = 1;
+      for (let i = 1; i <= resta; i++) {
+          resultadoEneMenorR = resultadoEneMenorR * i;
+      }
+      $("#resultadoPermutacion")
+        .text(newN/resultadoEneMenorR)
+        .hide()
+        .show('slow');
+    }
+  } );
+} );
