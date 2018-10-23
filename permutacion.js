@@ -1,7 +1,7 @@
 $( document ).ready( function () {
   $( "#onclickPermu" ).click( function () {
-    let n = $("#inputNPermutacion").val().trim();
-    let r = $("#inputRPermutacion").val().trim();
+    let n = parseInt($("#inputNPermutacion").val().trim());
+    let r = parseInt($("#inputRPermutacion").val().trim());
     if (r > n) {
       Materialize.toast('"R" no puede ser mayor a "N"', 3000);
     } else {

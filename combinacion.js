@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#formCombinacion").submit(function (event) {
-        let n = $("#inputNCombinacion").val();
-        let r = $("#inputRCombinacion").val();
+        let n = parseInt($("#inputNCombinacion").val());
+        let r = parseInt($("#inputRCombinacion").val());
 
         //n factorial
         var resultadoN = 1;
